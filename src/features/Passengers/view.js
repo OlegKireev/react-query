@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './styles.module.css';
 
 function PassengersView({
   data,
@@ -8,13 +9,20 @@ function PassengersView({
 }) {
   return (
     <div>
-      {isSuccess && (
-        data.data.map((passenger) => (
-          <div key={passenger._id}>
-            <p>{passenger.name}</p>
-            <p>{passenger._id}</p>
-          </div>
-        )))}
+
+      <ul className={styles.list}>
+        {isSuccess && (
+          data.data.map((passenger) => (
+            <li
+              key={passenger._id}
+              className={styles.listItem}
+            >
+              <span className={styles.passengerName}>{passenger.name}</span>
+              <span className={styles.passengerId}>{passenger._id}</span>
+            </li>
+          )))}
+      </ul>
+
       {isLoading && (
         <p>Loading...</p>
       )}
