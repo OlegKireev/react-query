@@ -3,7 +3,7 @@ import ErrorMessage from '../../components/ErrorMessage';
 import Preloader from '../../components/Preloader';
 import FindPassengerForm from './components/FindPassengerForm';
 
-function PassengerView({
+function PassengerFinderView({
   data,
   isLoading,
   isSuccess,
@@ -32,4 +32,4 @@ function PassengerView({
   )
 }
 
-export default PassengerView;
+export default PassengerFinderView;
