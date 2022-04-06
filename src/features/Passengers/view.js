@@ -1,8 +1,7 @@
 import React from 'react';
 import ErrorMessage from '../../components/ErrorMessage';
 import Preloader from '../../components/Preloader';
-import PassengerItem from './components/PassengerItem';
-import styles from './styles.module.css';
+import PassengerList from './components/PassengerList';
 
 function PassengersView({
   data,
@@ -12,15 +11,11 @@ function PassengersView({
 }) {
   return (
     <>
-      <ul className={styles.list}>
-        {isSuccess && (
-          data.data.map((passenger) => (
-            <PassengerItem
-              key={passenger._id}
-              data={passenger}
-            />
-          )))}
-      </ul>
+      {isSuccess && (
+        <PassengerList
+          data={data.data}
+        />
+      )}
 
       {isLoading && (
         <Preloader />
