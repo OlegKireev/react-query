@@ -1,8 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client'
-import './index.css';
-import App from './App';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools'
+import App from './App';
+import './index.css';
 
 const queryClient = new QueryClient();
 
@@ -12,5 +13,6 @@ createRoot(document.getElementById('root'))
       <React.StrictMode>
         <App />
       </React.StrictMode>
+      <ReactQueryDevtools />
     </QueryClientProvider>
   )
