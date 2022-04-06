@@ -1,10 +1,10 @@
 import { useQuery } from "react-query";
 import { fetchPassengers } from "./service";
 
-function usePassengersQuery() {
+function usePassengersQuery(page) {
   return useQuery(
-    'passengers',
-    fetchPassengers,
+    ['passengers', page],
+    fetchPassengers({ page }),
   )
 }
 
