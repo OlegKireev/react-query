@@ -1,16 +1,11 @@
 import { useQuery } from "react-query";
+import { fetchPassengerById } from "./service";
 
 function usePassengerQuery(id) {
-  const endpoint = `https://api.instantwebtools.net/v1/passenger/${id}`;
-
   return useQuery(
     ['passenger', id],
-    async () => {
-      const response = await fetch(endpoint);
-      return response.json();
-    }, {
-    enabled: Boolean(id),
-  }
+    fetchPassengerById(id),
+    { enabled: Boolean(id) }
   )
 }
 
