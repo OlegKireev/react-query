@@ -4,7 +4,7 @@ import View from './view';
 
 function PassengerFinder() {
   const [passengerId, setPassengerId] = useState('');
-  const { data, isLoading, isSuccess, error } = usePassengerQuery(passengerId);
+  const { data: { data } = {}, isLoading, isSuccess, error } = usePassengerQuery(passengerId);
 
   return (
     <View

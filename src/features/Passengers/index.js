@@ -4,7 +4,7 @@ import View from './view';
 
 function Passengers() {
   const [page, setPage] = useState(0);
-  const { data, isLoading, isSuccess, error } = usePassengersQuery(page);
+  const { data: { data } = [], isLoading, isSuccess, error } = usePassengersQuery(page);
 
   return (
     <View

@@ -1,9 +1,9 @@
-import axios from "axios";
-import { useMutation } from "react-query";
+import api from '../../../api';
+import { useMutation } from "react-query";;
 
 function useAddPassengerMutation() {
-  return useMutation((passengerData) => axios
-    .post("https://api.instantwebtools.net/v1/passenger/", passengerData)
+  return useMutation((passengerData) => api
+    .post("passenger", passengerData)
   )
 }
 
