@@ -1,4 +1,5 @@
 import React from 'react';
+import Preloader from '../../components/Preloader';
 import PassengerItem from './components/PassengerItem';
 import styles from './styles.module.css';
 
@@ -18,8 +19,8 @@ function PassengersView({
           )))}
       </ul>
 
-      {isLoading && (
-        <p>Loading...</p>
+      {!isLoading && (
+        <Preloader />
       )}
       {error && (
         <p>{error}</p>
